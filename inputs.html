@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>PiperNet - Install Instructions</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--
+Ramayana CSS Template
+https://templatemo.com/tm-529-ramayana
+-->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <div class="logo">
+                        <a href="index.html">PiperNet</a>
+                    </div>
+                </header>
+
+                <!-- Page Heading -->
+                <div class="page-heading">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <h1>Input Format and Samples</h1>
+                                <p>&nbsp;</p>
+                                <h2 id=InputFormatandSamples-DataImport>Data Import</h2>
+
+                                <p>PiperNet accepts both the CSV and&nbsp;<a href="https://gephi.org/gexf/format/">GEXF</a>&nbsp;inputs. The following possible approaches are the several ways you can import data to this application.
+                                </p>
+
+                                <div class=MsoNormal align=center style='text-align:center'>
+
+                                    <hr size=2 width="100%" align=center>
+
+                                </div>
+
+                                <p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:10.0pt;
+font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Importing nodes with labels and their relations</p>
+
+                                <p>The easiest is probably to just have a CSV file like this one:</p>
+
+                                <div>
+
+                                    <div><pre data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme=Confluence>Source,    Target</pre><pre>Jeremy,    Jennifer</pre><pre>Valerian,  Jeremy</pre></div>
+
+                                </div>
+
+                                <p>which specify the simple undirected relationship between&nbsp;<code><span
+style='font-size:10.0pt'>Source</span></code>&nbsp;and&nbsp;<code><span
+style='font-size:10.0pt'>Target</span></code>. This type of input kind can be achieved by selecting &quot;<strong>only edge file</strong>&quot; on import dialogue.
+                                </p>
+
+                                <div class=MsoNormal align=center style='text-align:center'>
+
+                                    <hr size=2 width="100%" align=center>
+
+                                </div>
+
+                                <p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:10.0pt;
+font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Importing more than labels: nodes and edges attributes</p>
+
+                                <p>To import attributes we will need to proceed differently. We need 2 CSV files: one for the list of nodes, one for the list of relations (edges)</p>
+
+                                <p>Nodes must have at least an&nbsp;<code><span style='font-size:10.0pt'>ID</span></code>&nbsp;(you can specify which column is the ID), other fields are optional, an example file with a list of nodes:</p>
+
+                                <div>
+
+                                    <div><pre data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme=Confluence>Id, Label,      Date of Birth,  Place of Birth,    Years of experience,    Rating</pre><pre>3,  Dubois,     17/09/1980,     Paris,             8,                      9.27</pre><pre>1,  Jeremy,     25/03/1978,     Tampa,             8,                      4.34</pre><pre>45, Rodriguez,  30/04/1985,     Berlin,            5,                      6.66</pre></div>
+
+                                </div>
+
+                                <p>Edges must have at least a&nbsp;<code><span style='font-size:10.0pt'>Source</span></code>&nbsp;and&nbsp;<code><span
+style='font-size:10.0pt'>Target</span></code>, other fields are optional, an example file with a list of edges:</p>
+
+                                <div>
+
+                                    <div><pre data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme=Confluence>Source, Target, Weight,   Where first met</pre><pre>1,      45,     3,        London</pre></div>
+
+                                </div>
+
+                                <p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:10.0pt;
+font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Importing with GEXF format</p>
+
+                                <p><a href="https://gephi.org/gexf/format/">GEXF</a>&nbsp;(Graph Exchange XML Format) is a language for describing complex networks structures, their associated data and dynamics. PiperNet can import and export GEXF files
+                                    with all necessary graph data stored in it.</p>
+
+                                <p>The&nbsp;<a href="https://gephi.org/gexf/format/dynamics.html">Dynamic GEXF</a>&nbsp;is currently not yet supported in PiperNet, and might not support unless enough functionalities added to enhance the interactivity of
+                                    Dynamic GEXF.Input Format: GEXF</p>
+
+                                <p>GEXF (Graph Exchange&nbsp;XML&nbsp;Format) is a language for describing&nbsp;
+                                    <strong>complex networks</strong>&nbsp;structures, their associated data and dynamics. we support for importing and exporting standard GEXF files to ease the saving and sharing boundaries of sophisticated graph data
+                                    structure.
+                                </p>
+
+                                <p><a href="https://gephi.org/gexf/format/">https://gephi.org/gexf/format/</a></p>
+
+                                <h2 id=InputFormatandSamples-Exampledatasets>Example datasets</h2>
+
+                                <p><a href="https://github.com/grp202004/PiperNet/blob/master/src/samples">Sample
+Datasets</a>&nbsp;are located inside this repository at <code><span
+style='font-size:10.0pt'>/src/samples</span></code>, enjoy and have fun :)</p>
+
+                                <div>
+
+                                    <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none' data-layout=wide>
+                                        <colgroup>
+                                            <col style="width: 249.0px;">
+                                            <col style="width: 245.0px;">
+                                            <col style="width: 245.0px;">
+                                            <col style="width: 221.0px;">
+                                        </colgroup>
+                                        <tr>
+                                            <td style='border:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p align=center style='text-align:center'><strong>Name</strong></p>
+                                            </td>
+                                            <td style='border:solid windowtext 1.0pt;border-left:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p align=center style='text-align:center'><strong>Type</strong></p>
+                                            </td>
+                                            <td style='border:solid windowtext 1.0pt;border-left:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p align=center style='text-align:center'><strong>Reference</strong></p>
+                                            </td>
+                                            <td style='border:solid windowtext 1.0pt;border-left:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p align=center style='text-align:center'><strong>File Location</strong></p>
+                                            </td>
+                                        </tr>
+                                        <tr style='page-break-inside:avoid'>
+                                            <td style='border:solid windowtext 1.0pt;border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p>the&nbsp;<a href="https://en.wikipedia.org/wiki/Les_Mis%C3%A9rables"><strong>Les
+  Miserables</strong></a>&nbsp;Character Relationship graph</p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><span class=status-macro>EDGE</span> </p>
+                                                <p><span class=status-macro>NON-CLUSTERED</span> </p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><a href="https://www-cs-faculty.stanford.edu/~knuth/sgb.html">https://www-cs-faculty.stanford.edu/~knuth/sgb.html</a></p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><code><span style='font-size:10.0pt'>/lesmiserables</span></code></p>
+                                            </td>
+                                        </tr>
+                                        <tr style='page-break-inside:avoid'>
+                                            <td style='border:solid windowtext 1.0pt;border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><strong>EuroSiS web mapping study</strong>: Mapping interactions between Science in Society actors on the Web of 12 European countries</p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'></td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><a href="http://www.webatlas.fr/exhibition/eurosis/">http://www.webatlas.fr/exhibition/eurosis/</a></p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><code><span style='font-size:10.0pt'>WebAtlas_EuroSiS.gexf</span></code></p>
+                                            </td>
+                                        </tr>
+                                        <tr style='page-break-inside:avoid'>
+                                            <td style='border:solid windowtext 1.0pt;border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><strong>Internet</strong>: a symmetrized snapshot of the structure of the Internet at the level of autonomous systems.</p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'></td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><a href="http://routeviews.org/">http://routeviews.org/</a></p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><code><span style='font-size:10.0pt'>internet_routers-22july06.gexf</span></code></p>
+                                            </td>
+                                        </tr>
+                                        <tr style='page-break-inside:avoid'>
+                                            <td style='border:solid windowtext 1.0pt;border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><strong>Diseasome</strong>: A network of disorders and disease genes linked by known disorder–gene associations, indicating the common genetic origin of many diseases. Genes associated with similar disorders
+                                                    show both higher likelihood of physical interactions between their products and higher expression profiling similarity for their transcripts, supporting the existence of distinct disease-specific functional
+                                                    modules.
+                                                </p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'></td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p>The original dataset can be found here: The Human Disease Network, Goh K-I, Cusick ME, Valle D, Childs B, Vidal M, Barabási A-L (2007), Proc Natl Acad Sci USA 104:8685-8690</p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><code><span style='font-size:10.0pt'>diseasome.gexf</span></code></p>
+                                            </td>
+                                        </tr>
+                                        <tr style='page-break-inside:avoid'>
+                                            <td style='border:solid windowtext 1.0pt;border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><strong>C. Elegans neural network</strong>: A directed, weighted network representing the neural network of C. Elegans. Data compiled by D. Watts and S. Strogatz and made available on the web here.</p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'></td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p>D. J. Watts and S. H. Strogatz, Nature 393, 440-442 (1998). Original experimental data taken from J. G. White, E. Southgate, J. N. Thompson, and S. Brenner, Phil. Trans. R. Soc. London 314, 1-340 (1986).</p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><code><span style='font-size:10.0pt'>celegans.gexf</span></code></p>
+                                            </td>
+                                        </tr>
+                                        <tr style='page-break-inside:avoid'>
+                                            <td style='border:solid windowtext 1.0pt;border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><strong>Java code</strong>: Source code structure of a Java program, by S.Heymann &amp; J.Palmier, 2008.</p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'></td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'></td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><code><span style='font-size:10.0pt'>codeminer.gexf</span></code></p>
+                                            </td>
+                                        </tr>
+                                        <tr style='page-break-inside:avoid'>
+                                            <td style='border:solid windowtext 1.0pt;border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><strong>CPAN authors</strong>: CPAN Explorer is a visualization project aiming at analyzing the relationships between the developers and the packages of the Perl language, known as the CPAN community. This
+                                                    file contains the network of developers, linked when they use the same Perl module</p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'></td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><a href="http://cpan-explorer.org/">http://cpan-explorer.org/</a></p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><code><span style='font-size:10.0pt'>cpan-authors.gexf</span></code></p>
+                                            </td>
+                                        </tr>
+                                        <tr style='page-break-inside:avoid'>
+                                            <td style='border:solid windowtext 1.0pt;border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><strong>Coauthorships in network science</strong>: coauthorship network of scientists working on network theory and experiment, as compiled by M. Newman in May 2006. A figure depicting the largest component
+                                                    of this network can be found here.</p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'></td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p>M. E. J. Newman, Phys. Rev. E 74, 036104 (2006).</p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><code><span style='font-size:10.0pt'>netscience.gexf</span></code></p>
+                                            </td>
+                                        </tr>
+                                        <tr style='page-break-inside:avoid'>
+                                            <td style='border:solid windowtext 1.0pt;border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><strong>The Marvel Social Network</strong>&nbsp;Networks of super heroes, constructed by Cesc Rosselló, Ricardo Alberich, and Joe Miro from the University of the Balearic Islands.</p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'></td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p>&nbsp;Collected by&nbsp;<a href="http://www.infochimps.com/datasets/marvel-universe-social-graph">Infochimps</a>&nbsp;and transformed &amp; enhanced by Kai Chang.</p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><code><span style='font-size:10.0pt'>hero-social-network.gexf</span></code></p>
+                                            </td>
+                                        </tr>
+                                        <tr style='page-break-inside:avoid'>
+                                            <td style='border:solid windowtext 1.0pt;border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><strong>Airlines</strong></p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'></td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'></td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><code><span style='font-size:10.0pt'>airlines.gexf</span></code></p>
+                                            </td>
+                                        </tr>
+                                        <tr style='page-break-inside:avoid'>
+                                            <td style='border:solid windowtext 1.0pt;border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><strong>Power grid</strong>: An undirected, unweighted network representing the topology of the Western States Power Grid of the United States.
+                                                </p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'></td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p>Data compiled by D. Watts and S. Strogatz and made available on the web here. Please cite D. J. Watts and S. H. Strogatz, Nature 393, 440-442 (1998).</p>
+                                            </td>
+                                            <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+                                                <p><code><span style='font-size:10.0pt'>power.gexf</span></code></p>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div id="sidebar">
+
+                <div class="inner">
+
+                    <!-- Search Box -->
+                    <section id="search" class="alt">
+                        <p style="font-size:30px; font-weight: bold; line-height: 90px; text-align: center; ">
+                            Documents
+                        </p>
+                    </section>
+
+                    <!-- Menu -->
+                    <nav id="menu">
+                        <ul>
+                            <li><a href="index.html">&nbsp;Homepage</a></li>
+                            <li><a href="Install.html">&nbsp;Install Instructions</a></li>
+                            <li><a href="systemreq.html">&nbsp;System Requirements</a></li>
+                            <li><a href="inputs.html">&nbsp;Input Format and Samples</a></li>
+                            <li>
+                                <span class="opener">User Manual</span>
+                                <ul>
+                                    <li><a href="#">About Document</a></li>
+                                    <li><a href="#">1 Software Overview</a></li>
+                                    <li><a href="#">2 Data Import</a></li>
+                                    <li><a href="#">3 Data visulization in 3D</a></li>
+                                    <li>
+                                        <span class="opener">4 Data Processing</span>
+                                        <ul>
+                                            <li><a href="#">Modify statics in data sheets</a></li>
+                                            <li><a href="#">Cluster</a></li>
+                                            <li><a href="#">Search</a></li>
+                                            <li><a href="#">Add and delete nodes or edges</a></li>
+                                            <li><a href="#">Set node color</a></li>
+                                            <li><a href="#">Add labels</a></li>
+                                            <li><a href="#">Drag nodes between clusters</a></li>
+                                            <li><a href="#">3D plane separation</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">5 Export Data</a></li>
+                                </ul>
+                            </li>
+
+
+                        </ul>
+                    </nav>
+
+
+
+                    <!-- Footer -->
+                    <footer id="footer">
+                        <p class="copyright">Copyright &copy; 2019 Company Name
+                            <br>Designed by <a rel="nofollow" href="https://www.facebook.com/templatemo">Template Mo</a></p>
+                    </footer>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Scripts -->
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/transition.js"></script>
+        <script src="assets/js/owl-carousel.js"></script>
+        <script src="assets/js/custom.js"></script>
+</body>
+
+
+</body>
+
+</html>
